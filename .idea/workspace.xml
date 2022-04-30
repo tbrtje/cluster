@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="caebba64-4ae0-46b4-9d31-625aed00449a" name="Changes" comment="added a democratic-csi implementation for use with truenas iscsi-storage">
-      <change beforePath="$PROJECT_DIR$/provision/ansible/inventory/group_vars/kubernetes/ubuntu.yml" beforeDir="false" afterPath="$PROJECT_DIR$/provision/ansible/inventory/group_vars/kubernetes/ubuntu.yml" afterDir="false" />
+    <list default="true" id="caebba64-4ae0-46b4-9d31-625aed00449a" name="Changes" comment="first working commit after initial setup">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cluster/base/flux-system/gotk-sync.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cluster/base/flux-system/gotk-sync.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,12 +48,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/thies/Dev/new_cluster"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/thies/Dev/new_cluster&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -112,14 +113,7 @@
       <workItem from="1649252510697" duration="746000" />
       <workItem from="1649253270480" duration="1805000" />
       <workItem from="1649357797754" duration="623000" />
-      <workItem from="1651307688521" duration="3449000" />
-    </task>
-    <task id="LOCAL-00027" summary="made instaloader run as 1000">
-      <created>1638306414159</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1638306414159</updated>
+      <workItem from="1651307688521" duration="3949000" />
     </task>
     <task id="LOCAL-00028" summary="fixed correct path">
       <created>1638307001458</created>
@@ -457,7 +451,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648634106773</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="first working commit after initial setup">
+      <created>1651311272883</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1651311272884</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -487,7 +488,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed folder for instaloader" />
     <MESSAGE value="added targets to instaloader" />
     <MESSAGE value="removed unused helm-release.yaml and updated renovate urls" />
     <MESSAGE value="removed renovate url" />
@@ -512,7 +512,8 @@
     <MESSAGE value="removed traefik crd" />
     <MESSAGE value="removed cert-manager crd" />
     <MESSAGE value="added a democratic-csi implementation for use with truenas iscsi-storage" />
-    <option name="LAST_COMMIT_MESSAGE" value="added a democratic-csi implementation for use with truenas iscsi-storage" />
+    <MESSAGE value="first working commit after initial setup" />
+    <option name="LAST_COMMIT_MESSAGE" value="first working commit after initial setup" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
