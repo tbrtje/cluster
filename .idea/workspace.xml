@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="caebba64-4ae0-46b4-9d31-625aed00449a" name="Changes" comment="first working commit after initial setup">
+    <list default="true" id="caebba64-4ae0-46b4-9d31-625aed00449a" name="Changes" comment="added democratic-csi-iscsi for use as storageprovider">
+      <change afterPath="$PROJECT_DIR$/cluster/base/flux-system/charts/helm/democratic-csi.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cluster/core/democratic-csi/helm-release.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cluster/core/democratic-csi/kustomization.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cluster/base/flux-system/gotk-sync.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cluster/base/flux-system/gotk-sync.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cluster/base/cluster-secrets.sops.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cluster/base/cluster-secrets.sops.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cluster/base/flux-system/charts/helm/kustomization.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cluster/base/flux-system/charts/helm/kustomization.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cluster/core/kustomization.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cluster/core/kustomization.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,16 +56,16 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/thies/Dev/new_cluster&quot;
+    &quot;last_opened_file_path&quot;: &quot;/Users/thies/Dev/new_cluster/cluster/core/democratic-csi&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cluster/core/democratic-csi" />
+      <recent name="$PROJECT_DIR$/cluster/base/flux-system/charts/helm" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/provision/ansible/inventory/host_vars" />
       <recent name="$PROJECT_DIR$/cluster/core/namespaces" />
-      <recent name="$PROJECT_DIR$/cluster/base/flux-system/charts/helm" />
-      <recent name="$PROJECT_DIR$/provision/terraform/cloudflare" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/provision/terraform" />
@@ -113,14 +118,7 @@
       <workItem from="1649252510697" duration="746000" />
       <workItem from="1649253270480" duration="1805000" />
       <workItem from="1649357797754" duration="623000" />
-      <workItem from="1651307688521" duration="3949000" />
-    </task>
-    <task id="LOCAL-00028" summary="fixed correct path">
-      <created>1638307001458</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1638307001458</updated>
+      <workItem from="1651307688521" duration="7245000" />
     </task>
     <task id="LOCAL-00029" summary="fixed correct path">
       <created>1638307021153</created>
@@ -458,7 +456,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651311272884</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="fixed incorrect branch name">
+      <created>1651311666120</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1651311666121</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -488,8 +493,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added targets to instaloader" />
-    <MESSAGE value="removed unused helm-release.yaml and updated renovate urls" />
     <MESSAGE value="removed renovate url" />
     <MESSAGE value="code cleanup and moved namespaces to seperate folder" />
     <MESSAGE value="added digikam" />
@@ -513,7 +516,9 @@
     <MESSAGE value="removed cert-manager crd" />
     <MESSAGE value="added a democratic-csi implementation for use with truenas iscsi-storage" />
     <MESSAGE value="first working commit after initial setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="first working commit after initial setup" />
+    <MESSAGE value="fixed incorrect branch name" />
+    <MESSAGE value="added democratic-csi-iscsi for use as storageprovider" />
+    <option name="LAST_COMMIT_MESSAGE" value="added democratic-csi-iscsi for use as storageprovider" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
