@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="caebba64-4ae0-46b4-9d31-625aed00449a" name="Changes" comment="added a democratic-csi implementation for use with truenas iscsi-storage">
+      <change beforePath="$PROJECT_DIR$/provision/ansible/inventory/group_vars/kubernetes/ubuntu.yml" beforeDir="false" afterPath="$PROJECT_DIR$/provision/ansible/inventory/group_vars/kubernetes/ubuntu.yml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="tbrtje-patch-1" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="fdc543ec-0908-4763-82b7-16d867856aac" />
+        <option name="url" value="https://github.com/tbrtje/home-cluster.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="KubernetesApiPersistence">
+    <option name="context" value="default" />
+    <option name="namespace" value="default" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="21DwhP0TIoXJjQxFqeD19hMLhKI" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/thies/Dev/new_cluster"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/provision/ansible/inventory/host_vars" />
+      <recent name="$PROJECT_DIR$/cluster/core/namespaces" />
+      <recent name="$PROJECT_DIR$/cluster/base/flux-system/charts/helm" />
+      <recent name="$PROJECT_DIR$/provision/terraform/cloudflare" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/provision/terraform" />
+      <recent name="$PROJECT_DIR$/cluster/core/namespaces" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="caebba64-4ae0-46b4-9d31-625aed00449a" name="Changes" comment="" />
+      <created>1637489085971</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1637489085971</updated>
+      <workItem from="1637489089003" duration="14777000" />
+      <workItem from="1637679548966" duration="5968000" />
+      <workItem from="1638194903973" duration="3000" />
+      <workItem from="1638291328594" duration="7828000" />
+      <workItem from="1638303240240" duration="686000" />
+      <workItem from="1638304340714" duration="3597000" />
+      <workItem from="1638338547408" duration="23678000" />
+      <workItem from="1638483071428" duration="845000" />
+      <workItem from="1638869827921" duration="7077000" />
+      <workItem from="1639059798577" duration="2520000" />
+      <workItem from="1639318173698" duration="1963000" />
+      <workItem from="1639755877691" duration="1929000" />
+      <workItem from="1639943101227" duration="53000" />
+      <workItem from="1640097446841" duration="19287000" />
+      <workItem from="1640856611858" duration="3434000" />
+      <workItem from="1641065636944" duration="595000" />
+      <workItem from="1641072426149" duration="18598000" />
+      <workItem from="1641469540750" duration="607000" />
+      <workItem from="1641908230163" duration="1026000" />
+      <workItem from="1642938540439" duration="1966000" />
+      <workItem from="1644253157098" duration="2371000" />
+      <workItem from="1644576488242" duration="2081000" />
+      <workItem from="1644686398716" duration="1196000" />
+      <workItem from="1645474211806" duration="28000" />
+      <workItem from="1645974820027" duration="636000" />
+      <workItem from="1645976515788" duration="292000" />
+      <workItem from="1645978797067" duration="597000" />
+      <workItem from="1646296267243" duration="92000" />
+      <workItem from="1647961209937" duration="1481000" />
+      <workItem from="1648126963341" duration="1198000" />
+      <workItem from="1648222209022" duration="13000" />
+      <workItem from="1648549257706" duration="2776000" />
+      <workItem from="1648558667014" duration="6231000" />
+      <workItem from="1648632376536" duration="3868000" />
+      <workItem from="1649060435942" duration="1197000" />
+      <workItem from="1649252510697" duration="746000" />
+      <workItem from="1649253270480" duration="1805000" />
+      <workItem from="1649357797754" duration="623000" />
+      <workItem from="1651307688521" duration="3449000" />
+    </task>
+    <task id="LOCAL-00027" summary="made instaloader run as 1000">
+      <created>1638306414159</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1638306414159</updated>
+    </task>
+    <task id="LOCAL-00028" summary="fixed correct path">
+      <created>1638307001458</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1638307001458</updated>
+    </task>
+    <task id="LOCAL-00029" summary="fixed correct path">
+      <created>1638307021153</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1638307021153</updated>
+    </task>
+    <task id="LOCAL-00030" summary="made instaloader fast-update and only run every five hours">
+      <created>1638307520124</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1638307520124</updated>
+    </task>
+    <task id="LOCAL-00031" summary="made instaloader fast-update and only run every five hours">
+      <created>1638307742932</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1638307742932</updated>
+    </task>
+    <task id="LOCAL-00032" summary="updated instaloader-config">
+      <created>1638349004460</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1638349004460</updated>
+    </task>
+    <task id="LOCAL-00033" summary="updated instaloader-config">
+      <created>1638349039053</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1638349039053</updated>
+    </task>
+    <task id="LOCAL-00034" summary="updated instaloader-config">
+      <created>1638371090132</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1638371090132</updated>
+    </task>
+    <task id="LOCAL-00035" summary="added loki">
+      <created>1638372800235</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1638372800235</updated>
+    </task>
+    <task id="LOCAL-00036" summary="fixed loki config">
+      <created>1638379238067</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1638379238067</updated>
+    </task>
+    <task id="LOCAL-00037" summary="fixed loki config and seperated promtail">
+      <created>1638380305996</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1638380305996</updated>
+    </task>
+    <task id="LOCAL-00038" summary="fixed loki config and seperated promtail">
+      <created>1638380459838</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1638380459838</updated>
+    </task>
+    <task id="LOCAL-00039" summary="fixed loki wrong config">
+      <created>1638383673358</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1638383673358</updated>
+    </task>
+    <task id="LOCAL-00040" summary="fixed loki wrong config">
+      <created>1638383993813</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1638383993813</updated>
+    </task>
+    <task id="LOCAL-00041" summary="fixed loki wrong config">
+      <created>1638385171766</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1638385171766</updated>
+    </task>
+    <task id="LOCAL-00042" summary="fixed folder for instaloader">
+      <created>1638395176567</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1638395176567</updated>
+    </task>
+    <task id="LOCAL-00043" summary="fixed folder for instaloader">
+      <created>1638437442669</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1638437442670</updated>
+    </task>
+    <task id="LOCAL-00044" summary="added targets to instaloader">
+      <created>1638483251402</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1638483251402</updated>
+    </task>
+    <task id="LOCAL-00045" summary="removed unused helm-release.yaml and updated renovate urls">
+      <created>1638871070975</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1638871070975</updated>
+    </task>
+    <task id="LOCAL-00046" summary="removed renovate url">
+      <created>1638872026262</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1638872026262</updated>
+    </task>
+    <task id="LOCAL-00047" summary="code cleanup and moved namespaces to seperate folder">
+      <created>1638874071922</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1638874071922</updated>
+    </task>
+    <task id="LOCAL-00048" summary="code cleanup and moved namespaces to seperate folder">
+      <created>1638874323385</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1638874323385</updated>
+    </task>
+    <task id="LOCAL-00049" summary="added digikam">
+      <created>1638907380674</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1638907380674</updated>
+    </task>
+    <task id="LOCAL-00050" summary="added some targets">
+      <created>1639064610344</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1639064610345</updated>
+    </task>
+    <task id="LOCAL-00051" summary="added some targets">
+      <created>1639318346039</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1639318346039</updated>
+    </task>
+    <task id="LOCAL-00052" summary="added some targets">
+      <created>1639766830288</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1639766830288</updated>
+    </task>
+    <task id="LOCAL-00053" summary="added an emptydir for plex to transcode in">
+      <created>1639766847630</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1639766847630</updated>
+    </task>
+    <task id="LOCAL-00054" summary="added kubernetes to cloudflared.yaml">
+      <created>1640097689961</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1640097689962</updated>
+    </task>
+    <task id="LOCAL-00055" summary="added kubernetes to cloudflared.yaml">
+      <created>1640101819005</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1640101819005</updated>
+    </task>
+    <task id="LOCAL-00056" summary="edited configmap for dl">
+      <created>1640545630885</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1640545630885</updated>
+    </task>
+    <task id="LOCAL-00057" summary="updated xtradbcluster version">
+      <created>1641075637808</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1641075637809</updated>
+    </task>
+    <task id="LOCAL-00058" summary="updated xtradbcluster version">
+      <created>1641078573562</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1641078573563</updated>
+    </task>
+    <task id="LOCAL-00059" summary="updated nextcloud deployment">
+      <created>1641079465396</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1641079465396</updated>
+    </task>
+    <task id="LOCAL-00060" summary="updated database-image-version">
+      <created>1641121100705</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1641121100706</updated>
+    </task>
+    <task id="LOCAL-00061" summary="temporarily pause ig deployment">
+      <created>1641164801240</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1641164801240</updated>
+    </task>
+    <task id="LOCAL-00062" summary="removed projector-intellij">
+      <created>1642938653992</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1642938653992</updated>
+    </task>
+    <task id="LOCAL-00063" summary="removed projector-intellij">
+      <created>1644253242990</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1644253242990</updated>
+    </task>
+    <task id="LOCAL-00064" summary="removed traefik, cause i dont need it right now.">
+      <created>1644576700878</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1644576700879</updated>
+    </task>
+    <task id="LOCAL-00065" summary="added cloudflared for tunneling">
+      <created>1648560808130</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1648560808131</updated>
+    </task>
+    <task id="LOCAL-00066" summary="added the right branch to checkout">
+      <created>1648561091695</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1648561091695</updated>
+    </task>
+    <task id="LOCAL-00067" summary="removed systemupgradecontroller">
+      <created>1648561552171</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1648561552171</updated>
+    </task>
+    <task id="LOCAL-00068" summary="removed kubevip">
+      <created>1648561675325</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1648561675325</updated>
+    </task>
+    <task id="LOCAL-00069" summary="replaced cloudflared image with a multiarch one">
+      <created>1648562053172</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1648562053172</updated>
+    </task>
+    <task id="LOCAL-00070" summary="scale cloudflared to 2 instances">
+      <created>1648562675645</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1648562675645</updated>
+    </task>
+    <task id="LOCAL-00071" summary="removed traefik crd">
+      <created>1648580534711</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1648580534711</updated>
+    </task>
+    <task id="LOCAL-00072" summary="removed cert-manager crd">
+      <created>1648580703333</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1648580703333</updated>
+    </task>
+    <task id="LOCAL-00073" summary="removed cert-manager crd">
+      <created>1648580769497</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1648580769497</updated>
+    </task>
+    <task id="LOCAL-00074" summary="added a democratic-csi implementation for use with truenas iscsi-storage">
+      <created>1648633652343</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1648633652343</updated>
+    </task>
+    <task id="LOCAL-00075" summary="added a democratic-csi implementation for use with truenas iscsi-storage">
+      <created>1648634106773</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1648634106773</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="new_cluster" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fixed folder for instaloader" />
+    <MESSAGE value="added targets to instaloader" />
+    <MESSAGE value="removed unused helm-release.yaml and updated renovate urls" />
+    <MESSAGE value="removed renovate url" />
+    <MESSAGE value="code cleanup and moved namespaces to seperate folder" />
+    <MESSAGE value="added digikam" />
+    <MESSAGE value="added some targets" />
+    <MESSAGE value="added an emptydir for plex to transcode in" />
+    <MESSAGE value="added kubernetes to cloudflared.yaml" />
+    <MESSAGE value="edited configmap for dl" />
+    <MESSAGE value="updated xtradbcluster version" />
+    <MESSAGE value="updated nextcloud deployment" />
+    <MESSAGE value="updated database-image-version" />
+    <MESSAGE value="temporarily pause ig deployment" />
+    <MESSAGE value="removed projector-intellij" />
+    <MESSAGE value="removed traefik, cause i dont need it right now." />
+    <MESSAGE value="added cloudflared for tunneling" />
+    <MESSAGE value="added the right branch to checkout" />
+    <MESSAGE value="removed systemupgradecontroller" />
+    <MESSAGE value="removed kubevip" />
+    <MESSAGE value="replaced cloudflared image with a multiarch one" />
+    <MESSAGE value="scale cloudflared to 2 instances" />
+    <MESSAGE value="removed traefik crd" />
+    <MESSAGE value="removed cert-manager crd" />
+    <MESSAGE value="added a democratic-csi implementation for use with truenas iscsi-storage" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a democratic-csi implementation for use with truenas iscsi-storage" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
