@@ -173,6 +173,10 @@ spec:
         value: "on"
       - name: DOCKER_VERNEMQ_ACCEPT_EULA
         value: "yes"
+      - name: DOCKER_VERNEMQ_USER_zigbee2mqtt
+        value: ${MQTT_ZIGBEE}
+      - name: DOCKER_VERNEMQ_USER_homeassistant
+        value: ${MQTT_HA}
     #  - name: DOCKER_VERNEMQ_ALLOW_ANONYMOUS
     #    value: "on"
     #  - name: DOCKER_VERNEMQ_MAX_CLIENT_ID_SIZE
@@ -187,9 +191,3 @@ spec:
     #    value: "/etc/ssl/vernemq/tls.crt"
     #  - name: DOCKER_VERNEMQ_LISTENER__SSL__KEYFILE
     #    value: "/etc/ssl/vernemq/tls.key"
-
-    envFrom: []
-    # add additional environment variables e.g. from a configmap or secret
-    # can be usefull if you wanna use authentication via files
-    #  - secretRef:
-    #      name: vernemq-users
