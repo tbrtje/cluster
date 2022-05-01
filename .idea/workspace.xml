@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="caebba64-4ae0-46b4-9d31-625aed00449a" name="Changes" comment="added vernemq as a message broker for IOT-Devices">
-      <change beforePath="$PROJECT_DIR$/cluster/apps/iot/vernemq/helm-release.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cluster/apps/iot/vernemq/helm-release.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="caebba64-4ae0-46b4-9d31-625aed00449a" name="Changes" comment="added vernemq as a message broker for IOT-Devices" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -113,13 +111,6 @@
       <workItem from="1649253270480" duration="1805000" />
       <workItem from="1649357797754" duration="623000" />
       <workItem from="1651307688521" duration="7568000" />
-    </task>
-    <task id="LOCAL-00031" summary="made instaloader fast-update and only run every five hours">
-      <created>1638307742932</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1638307742932</updated>
     </task>
     <task id="LOCAL-00032" summary="updated instaloader-config">
       <created>1638349004460</created>
@@ -457,7 +448,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651317429195</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="added vernemq as a message broker for IOT-Devices">
+      <created>1651396169421</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1651396169421</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -487,7 +485,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="removed renovate url" />
     <MESSAGE value="code cleanup and moved namespaces to seperate folder" />
     <MESSAGE value="added digikam" />
     <MESSAGE value="added some targets" />
@@ -512,7 +509,8 @@
     <MESSAGE value="first working commit after initial setup" />
     <MESSAGE value="fixed incorrect branch name" />
     <MESSAGE value="added democratic-csi-iscsi for use as storageprovider" />
-    <option name="LAST_COMMIT_MESSAGE" value="added democratic-csi-iscsi for use as storageprovider" />
+    <MESSAGE value="added vernemq as a message broker for IOT-Devices" />
+    <option name="LAST_COMMIT_MESSAGE" value="added vernemq as a message broker for IOT-Devices" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

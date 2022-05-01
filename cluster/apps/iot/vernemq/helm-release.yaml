@@ -44,6 +44,7 @@ spec:
       mqtt:
         enabled: true
         port: 1883
+        nodeport: 1883
       mqtts:
         enabled: false
         port: 8883
