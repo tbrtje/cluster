@@ -170,6 +170,8 @@ spec:
         value: "on"
       - name: DOCKER_VERNEMQ_ALLOW_UNSUBSCRIBE_DURING_NETSPLIT
         value: "on"
+      - name: DOCKER_VERNEMQ_ACCEPT_EULA
+        value: "yes"
     #  - name: DOCKER_VERNEMQ_ALLOW_ANONYMOUS
     #    value: "on"
     #  - name: DOCKER_VERNEMQ_MAX_CLIENT_ID_SIZE
