@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="caebba64-4ae0-46b4-9d31-625aed00449a" name="Changes" comment="added democratic-csi-iscsi for use as storageprovider">
-      <change afterPath="$PROJECT_DIR$/cluster/apps/iot/kustomization.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cluster/apps/iot/vernemq/helm-release.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cluster/apps/iot/vernemq/kustomization.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cluster/base/flux-system/charts/helm/vernemq-charts.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cluster/core/namespaces/iot.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cluster/base/flux-system/charts/helm/kustomization.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cluster/base/flux-system/charts/helm/kustomization.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cluster/core/namespaces/kustomization.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cluster/core/namespaces/kustomization.yaml" afterDir="false" />
+    <list default="true" id="caebba64-4ae0-46b4-9d31-625aed00449a" name="Changes" comment="added vernemq as a message broker for IOT-Devices">
+      <change beforePath="$PROJECT_DIR$/cluster/apps/kustomization.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cluster/apps/kustomization.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,22 +47,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/thies/Dev/new_cluster/cluster/apps/iot/vernemq"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/thies/Dev/new_cluster/cluster/core/democratic-csi&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/cluster/apps/iot/vernemq" />
-      <recent name="$PROJECT_DIR$/cluster/apps/iot" />
-      <recent name="$PROJECT_DIR$/cluster/base/flux-system/charts/helm" />
       <recent name="$PROJECT_DIR$/cluster/core/democratic-csi" />
+      <recent name="$PROJECT_DIR$/cluster/base/flux-system/charts/helm" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/provision/ansible/inventory/host_vars" />
+      <recent name="$PROJECT_DIR$/cluster/core/namespaces" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/cluster/apps/iot/vernemq" />
       <recent name="$PROJECT_DIR$/provision/terraform" />
       <recent name="$PROJECT_DIR$/cluster/core/namespaces" />
     </key>
@@ -120,7 +112,14 @@
       <workItem from="1649252510697" duration="746000" />
       <workItem from="1649253270480" duration="1805000" />
       <workItem from="1649357797754" duration="623000" />
-      <workItem from="1651307688521" duration="10493000" />
+      <workItem from="1651307688521" duration="7568000" />
+    </task>
+    <task id="LOCAL-00031" summary="made instaloader fast-update and only run every five hours">
+      <created>1638307742932</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1638307742932</updated>
     </task>
     <task id="LOCAL-00032" summary="updated instaloader-config">
       <created>1638349004460</created>
@@ -458,14 +457,7 @@
       <option name="project" value="LOCAL" />
       <updated>1651317429195</updated>
     </task>
-    <task id="LOCAL-00080" summary="added democratic-csi-iscsi for use as storageprovider">
-      <created>1651317515573</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1651317515573</updated>
-    </task>
-    <option name="localTasksCounter" value="81" />
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
