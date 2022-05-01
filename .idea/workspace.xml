@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="caebba64-4ae0-46b4-9d31-625aed00449a" name="Changes" comment="added vernemq as a message broker for IOT-Devices" />
+    <list default="true" id="caebba64-4ae0-46b4-9d31-625aed00449a" name="Changes" comment="added vernemq-nodeport so that bridges on the main network can join">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cluster/apps/iot/vernemq/helm-release.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cluster/apps/iot/vernemq/helm-release.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,13 +114,6 @@
       <workItem from="1649253270480" duration="1805000" />
       <workItem from="1649357797754" duration="623000" />
       <workItem from="1651307688521" duration="7568000" />
-    </task>
-    <task id="LOCAL-00032" summary="updated instaloader-config">
-      <created>1638349004460</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1638349004460</updated>
     </task>
     <task id="LOCAL-00033" summary="updated instaloader-config">
       <created>1638349039053</created>
@@ -455,7 +451,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651396169421</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="added vernemq-nodeport so that bridges on the main network can join">
+      <created>1651396765917</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1651396765917</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -485,7 +488,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="code cleanup and moved namespaces to seperate folder" />
     <MESSAGE value="added digikam" />
     <MESSAGE value="added some targets" />
     <MESSAGE value="added an emptydir for plex to transcode in" />
@@ -510,7 +512,8 @@
     <MESSAGE value="fixed incorrect branch name" />
     <MESSAGE value="added democratic-csi-iscsi for use as storageprovider" />
     <MESSAGE value="added vernemq as a message broker for IOT-Devices" />
-    <option name="LAST_COMMIT_MESSAGE" value="added vernemq as a message broker for IOT-Devices" />
+    <MESSAGE value="added vernemq-nodeport so that bridges on the main network can join" />
+    <option name="LAST_COMMIT_MESSAGE" value="added vernemq-nodeport so that bridges on the main network can join" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
