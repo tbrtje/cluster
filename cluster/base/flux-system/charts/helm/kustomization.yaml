@@ -27,3 +27,4 @@ resources:
   - traefik-charts.yaml
   - weaveworks-kured-charts.yaml
   - democratic-csi.yaml
+  - vernemq-charts.yaml
