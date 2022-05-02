@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="caebba64-4ae0-46b4-9d31-625aed00449a" name="Changes" comment="added auth to the mqtt-broker">
-      <change afterPath="$PROJECT_DIR$/cluster/apps/iot/mosquitto/helm-release.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cluster/apps/iot/mosquitto/kustomization.yaml" afterDir="false" />
+    <list default="true" id="caebba64-4ae0-46b4-9d31-625aed00449a" name="Changes" comment="added mosquitto as a message broker. hopefully this works better.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cluster/apps/iot/kustomization.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cluster/apps/iot/kustomization.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cluster/core/democratic-csi/helm-release.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cluster/core/democratic-csi/helm-release.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,12 +48,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/thies/Dev/new_cluster/cluster/apps/iot"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/thies/Dev/new_cluster/cluster/apps/iot&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/cluster/apps/iot" />
@@ -116,14 +114,7 @@
       <workItem from="1649253270480" duration="1805000" />
       <workItem from="1649357797754" duration="623000" />
       <workItem from="1651307688521" duration="7568000" />
-      <workItem from="1651495787206" duration="461000" />
-    </task>
-    <task id="LOCAL-00037" summary="fixed loki config and seperated promtail">
-      <created>1638380305996</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1638380305996</updated>
+      <workItem from="1651495787206" duration="682000" />
     </task>
     <task id="LOCAL-00038" summary="fixed loki config and seperated promtail">
       <created>1638380459838</created>
@@ -461,7 +452,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651398581797</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="added mosquitto as a message broker. hopefully this works better.">
+      <created>1651496276957</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1651496276958</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -491,7 +489,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added an emptydir for plex to transcode in" />
     <MESSAGE value="added kubernetes to cloudflared.yaml" />
     <MESSAGE value="edited configmap for dl" />
     <MESSAGE value="updated xtradbcluster version" />
@@ -516,7 +513,8 @@
     <MESSAGE value="added vernemq-nodeport so that bridges on the main network can join" />
     <MESSAGE value="added vernemq-loadbalancer so that bridges on the main network can join" />
     <MESSAGE value="added auth to the mqtt-broker" />
-    <option name="LAST_COMMIT_MESSAGE" value="added auth to the mqtt-broker" />
+    <MESSAGE value="added mosquitto as a message broker. hopefully this works better." />
+    <option name="LAST_COMMIT_MESSAGE" value="added mosquitto as a message broker. hopefully this works better." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
