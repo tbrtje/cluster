@@ -1,0 +1,59 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mosquitto
+  namespace: iot
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: mosquitto
+      version: 4.3.1
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home-charts
+        namespace: flux-system
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    remediation:
+      retries: 3
+  values:
+
+    # -- Configures service settings for the chart. Normally this does not need to be modified.
+    # @default -- See values.yaml
+    service:
+      main:
+        type: LoadBalancer
+        loadBalancerIP: 192.168.178.72
+        ports:
+          http:
+            enabled: false
+          mqtt:
+            enabled: true
+            port: 1883
+
+    auth:
+      # -- By enabling this, `allow_anonymous` gets set to `false` in the mosquitto config.
+      enabled: false
+
+    persistence:
+      # -- Configure a persistent volume to place mosquitto data in.
+      # When enabled, this enables `persistence` and `persistence_location` in the mosquitto config.
+      # @default -- See values.yaml
+      data:
+        enabled: false
+        mountPath: /mosquitto/data
+      # -- Configure a persistent volume to place *.conf mosquitto-config-files in.
+      # When enabled, this gets set as `include_dir` in the mosquitto config.
+      # @default -- See values.yaml
+      configinc:
+        enabled: true
+        mountPath: /mosquitto/configinc
+        accessMode: ReadWriteOnce
+        type: pvc
+        size: 100Mi
+        storageClass: freenas-iscsi-csi

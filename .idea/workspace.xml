@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="caebba64-4ae0-46b4-9d31-625aed00449a" name="Changes" comment="added vernemq-nodeport so that bridges on the main network can join">
+    <list default="true" id="caebba64-4ae0-46b4-9d31-625aed00449a" name="Changes" comment="added auth to the mqtt-broker">
+      <change afterPath="$PROJECT_DIR$/cluster/apps/iot/mosquitto/helm-release.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cluster/apps/iot/mosquitto/kustomization.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cluster/apps/iot/vernemq/helm-release.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cluster/apps/iot/vernemq/helm-release.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cluster/apps/iot/kustomization.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cluster/apps/iot/kustomization.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,19 +50,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/thies/Dev/new_cluster/cluster/core/democratic-csi&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/thies/Dev/new_cluster/cluster/apps/iot"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cluster/apps/iot" />
       <recent name="$PROJECT_DIR$/cluster/core/democratic-csi" />
       <recent name="$PROJECT_DIR$/cluster/base/flux-system/charts/helm" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/provision/ansible/inventory/host_vars" />
-      <recent name="$PROJECT_DIR$/cluster/core/namespaces" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/provision/terraform" />
@@ -114,34 +116,7 @@
       <workItem from="1649253270480" duration="1805000" />
       <workItem from="1649357797754" duration="623000" />
       <workItem from="1651307688521" duration="7568000" />
-    </task>
-    <task id="LOCAL-00033" summary="updated instaloader-config">
-      <created>1638349039053</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1638349039053</updated>
-    </task>
-    <task id="LOCAL-00034" summary="updated instaloader-config">
-      <created>1638371090132</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1638371090132</updated>
-    </task>
-    <task id="LOCAL-00035" summary="added loki">
-      <created>1638372800235</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1638372800235</updated>
-    </task>
-    <task id="LOCAL-00036" summary="fixed loki config">
-      <created>1638379238067</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1638379238067</updated>
+      <workItem from="1651495787206" duration="461000" />
     </task>
     <task id="LOCAL-00037" summary="fixed loki config and seperated promtail">
       <created>1638380305996</created>
@@ -458,7 +433,35 @@
       <option name="project" value="LOCAL" />
       <updated>1651396765917</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="added vernemq-loadbalancer so that bridges on the main network can join">
+      <created>1651397491538</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1651397491539</updated>
+    </task>
+    <task id="LOCAL-00083" summary="added vernemq-loadbalancer so that bridges on the main network can join">
+      <created>1651397596519</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1651397596519</updated>
+    </task>
+    <task id="LOCAL-00084" summary="added vernemq-loadbalancer so that bridges on the main network can join">
+      <created>1651397598574</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1651397598574</updated>
+    </task>
+    <task id="LOCAL-00085" summary="added auth to the mqtt-broker">
+      <created>1651398581797</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1651398581797</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -488,8 +491,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added digikam" />
-    <MESSAGE value="added some targets" />
     <MESSAGE value="added an emptydir for plex to transcode in" />
     <MESSAGE value="added kubernetes to cloudflared.yaml" />
     <MESSAGE value="edited configmap for dl" />
@@ -513,7 +514,9 @@
     <MESSAGE value="added democratic-csi-iscsi for use as storageprovider" />
     <MESSAGE value="added vernemq as a message broker for IOT-Devices" />
     <MESSAGE value="added vernemq-nodeport so that bridges on the main network can join" />
-    <option name="LAST_COMMIT_MESSAGE" value="added vernemq-nodeport so that bridges on the main network can join" />
+    <MESSAGE value="added vernemq-loadbalancer so that bridges on the main network can join" />
+    <MESSAGE value="added auth to the mqtt-broker" />
+    <option name="LAST_COMMIT_MESSAGE" value="added auth to the mqtt-broker" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
