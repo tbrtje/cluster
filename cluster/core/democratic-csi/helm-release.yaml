@@ -84,7 +84,7 @@ spec:
         instance_id:
         httpConnection:
           protocol: http
-          host: 192.168.178.101
+          host: 192.168.178.178
           port: 80
           # use only 1 of apiKey or username/password
           # if both are present, apiKey is preferred
