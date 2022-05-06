@@ -8,7 +8,7 @@ spec:
   interval: 5m
   chart:
     spec:
-      chart: teleport
+      chart: teleport-cluster
       version: 10.0.0-dev
       sourceRef:
         kind: HelmRepository
