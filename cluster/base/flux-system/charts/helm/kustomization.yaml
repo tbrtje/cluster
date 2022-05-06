@@ -28,3 +28,4 @@ resources:
   - weaveworks-kured-charts.yaml
   - democratic-csi.yaml
   - vernemq-charts.yaml
+  - teleport-charts.yaml
