@@ -1,0 +1,29 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    hajimari.io/appName: teleport
+    hajimari.io/enable: "true"
+    hajimari.io/icon: web
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+  name: teleport
+  namespace: kube-system
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: teleport.broetje.online
+      http:
+        paths:
+          - backend:
+              service:
+                name: teleport
+                port:
+                  number: 443
+            path: /
+            pathType: Prefix
+  tls:
+    - hosts:
+        - teleport.broetje.online
+      secretName: teleport-tls
