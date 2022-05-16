@@ -7,6 +7,8 @@ metadata:
     hajimari.io/appName: teleport
     hajimari.io/enable: "true"
     hajimari.io/icon: web
+    external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+    external-dns/is-public: "true"
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
   name: teleport
   namespace: kube-system
