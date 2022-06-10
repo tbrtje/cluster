@@ -53,7 +53,7 @@ spec:
     # Teleport supports TLS routing. In this mode, all client connections are wrapped in TLS and multiplexed on one Teleport proxy port.
     # Default mode will not utilize TLS routing and operate in backwards-compatibility mode.
     # Possible values are 'multiplex'
-    proxyListenerMode: ""
+    proxyListenerMode: "multiplex"
 
     # By default, Teleport will multiplex Postgres and MongoDB database connections on the same port as the proxy's web listener (443)
     # Setting either of these values to true will separate the listeners out onto a separate port (5432 for Postgres, 27017 for MongoDB)
@@ -181,7 +181,7 @@ spec:
       # These settings are mutually exclusive with the "tls" value below.
       certManager:
         # If set to true, a common name matching the cluster name will be set in the certificate signing request. This is mandatory for some CAs.
-        addCommonName: false
+        addCommonName: true
         # If set to true, use cert-manager to get certificates for Teleport to use for TLS termination
         enabled: true
         # Name of the Issuer/ClusterIssuer to use for certs
