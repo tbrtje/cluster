@@ -1,4 +1,22 @@
 ---
+kind: Service
+apiVersion: v1
+metadata:
+  name: teleport
+  namespace: kube-system
+spec:
+  type: LoadBalancer
+  loadBalancerIP: "192.168.178.73"
+  selector:
+    app.kubernetes.io/name: teleport
+  ports:
+    - port: 3023
+      targetPort: ssh-proxy
+    - port: 3025
+      targetPort: ssh-auth
+    - port: 3080
+      targetPort: https-ui
+---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -8,6 +26,7 @@ metadata:
     hajimari.io/enable: "true"
     hajimari.io/icon: web
     external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+    external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
     external-dns/is-public: "true"
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
   name: teleport
@@ -22,7 +41,7 @@ spec:
               service:
                 name: teleport
                 port:
-                  number: 443
+                  number: 3080
             path: /
             pathType: Prefix
   tls:
