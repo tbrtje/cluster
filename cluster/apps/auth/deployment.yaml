@@ -1,0 +1,35 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: lldap
+  namespace: lldap
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: lldap
+  template:
+    spec:
+      containers:
+        - name: lldap
+          image: nitnelave/lldap:latest
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: LLDAP_JWT_SECRET
+              value: ${LLDAP_JWT_SECRET}
+            - name: LLDAP_LDAP_USER_PASS
+              value: ${LLDAP_LDAP_USER_PASS}
+            - name: LLDAP_LDAP_BASE_DN
+              value: ${LLDAP_LDAP_BASE_DN}
+          volumeMounts:
+            - mountPath: /data
+              name: lldap-data
+          ports:
+            - containerPort: 3890
+              name: ldap
+            - containerPort: 17170
+              name: web
+      volumes:
+        - name: lldap-data
+          persistentVolumeClaim:
+            claimName: lldap-data

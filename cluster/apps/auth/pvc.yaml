@@ -1,0 +1,11 @@
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: lldap-data
+  namespace: lldap
+spec:
+  storageClassName: freenas-iscsi-csi
+  resources:
+    requests:
+      storage: 500Mi
