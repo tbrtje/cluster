@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: vernemq
-      version: 1.6.12-1
+      version: 1.6.12
       sourceRef:
         kind: HelmRepository
         name: vernemq-charts
