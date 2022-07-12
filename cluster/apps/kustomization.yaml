@@ -5,6 +5,7 @@ resources:
   - default
   - kube-system
   - networking
+  - db
   # - system-upgrade
   - iot
   - auth

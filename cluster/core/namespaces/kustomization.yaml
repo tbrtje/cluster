@@ -8,3 +8,4 @@ resources:
   - system-upgrade.yaml
   - iot.yaml
   - lldap.yaml
+  - db.yaml
