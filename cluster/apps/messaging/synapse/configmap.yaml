@@ -1,0 +1,100 @@
+---
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: synapse-configmap
+  namespace: messaging
+data:
+  init.sql: |
+    DO
+    $do$
+    BEGIN
+      IF
+        EXISTS (
+          SELECT FROM pg_catalog.pg_roles
+          WHERE  rolname = 'synapse') THEN
+
+          RAISE NOTICE 'Role "synapse" already exists. Skipping.';
+        ELSE
+          BEGIN   -- nested block
+            CREATE ROLE my_user LOGIN PASSWORD '${SYNAPSE_DB_PASSWORD}';
+          EXCEPTION
+            WHEN duplicate_object THEN
+              RAISE NOTICE 'Role "synapse" was just created by a concurrent transaction. Skipping.';
+          END;
+      END IF;
+    END
+    $do$;
+    DO
+    $do$
+    BEGIN
+       IF EXISTS (SELECT FROM pg_database WHERE datname = 'synapse') THEN
+          RAISE NOTICE 'Database already exists';  -- optional
+       ELSE
+          PERFORM dblink_exec('dbname=' || current_database()  -- current db
+                            , 'CREATE DATABASE synapse');
+       END IF;
+    END
+    $do$;
+    GRANT ALL PRIVILEGES ON DATABASE synapse TO synapse;
+
+
+  homeserver.yaml: |
+    # Configuration file for Synapse.
+    #
+    # This is a YAML file: see [1] for a quick introduction. Note in particular
+    # that *indentation is important*: all the elements of a list or dictionary
+    # should have the same indentation.
+    #
+    # [1] https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html
+    #
+    # For more information on how to configure Synapse, including a complete accounting of
+    # each option, go to docs/usage/configuration/config_documentation.md or
+    # https://matrix-org.github.io/synapse/latest/usage/configuration/config_documentation.html
+    server_name: "broetje.online"
+    pid_file: /data/homeserver.pid
+    listeners:
+      - port: 8008
+        tls: false
+        type: http
+        x_forwarded: true
+        resources:
+          - names: [client, federation]
+            compress: false
+    database:
+      name: psycopg2
+      args:
+        user: synapse
+        password: ${SYNAPSE_DB_PASSWORD}
+        database: synapse
+        host: postgres-service
+        cp_min: 5
+        cp_max: 10
+    log_config: "/data/broetje.online.log.config"
+    media_store_path: /data/media_store
+    registration_shared_secret: "kIInorh_pTe-HEZB~&,uX-,-0z90B40aiKJ5wq~94MYOaVx6C~"
+    report_stats: true
+    macaroon_secret_key: "P&SvcRfHzB;MNuhqNX&*lut0ElHD+n.RMxyBenr:PTe1Im58@f"
+    form_secret: "D@E5rdui~im@4O#I+aaX;v2l~Pz684&6ywDml;fifZ:28l@w~7"
+    signing_key_path: "/data/broetje.online.signing.key"
+    trusted_key_servers:
+      - server_name: "matrix.org"
+    public_baseurl: https://matrix.broetje.online/
+    modules:
+      - module: "ldap_auth_provider.LdapAuthProviderModule"
+        config:
+          enabled: true
+          uri: "ldap://lldap.lldap"
+          start_tls: false
+          base: "ou=people,dc=broetje,dc=online"
+          attributes:
+            uid: "uid"
+            mail: "mail"
+            name: "cn"
+            bind_dn: "uid=admin,ou=people,dc=broetje,dc=online"
+            bind_password: "password"
+            filter: "(objectClass=person)"
+
+    # vim:ft=yaml
+  broetje.online.signing.key: |
+    ${BROETJE_ONLINE_SIGNING_KEY}
