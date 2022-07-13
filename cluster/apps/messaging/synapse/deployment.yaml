@@ -32,7 +32,12 @@ spec:
           command:
             - /bin/sh
             - -c
-            - "psql postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres.db/${POSTGRES_DB} -f /config/init.sql"
+            - "psql postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres.db/${POSTGRES_DB} '-f /config/init.sql'"
+          volumeMounts:
+            - name: data
+              mountPath: /data
+            - name: config
+              mountPath: /config
       containers:
         - name: synapse
           image: matrixdotorg/synapse:v1.62.0

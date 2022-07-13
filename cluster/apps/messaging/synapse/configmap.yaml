@@ -6,6 +6,7 @@ metadata:
   namespace: messaging
 data:
   init.sql: |
+    create extension dblink;
     DO
     $do$
     BEGIN
