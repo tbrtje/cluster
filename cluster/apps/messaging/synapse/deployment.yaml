@@ -29,10 +29,11 @@ spec:
         - name: init-db
           image: postgres:9.6
           imagePullPolicy: IfNotPresent
+          # TODO: Figure out why this does not work and why its not connecting.
           command:
             - /bin/sh
             - -c
-            - "psql postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres.db/${POSTGRES_DB} '-f /config/init.sql'"
+            - "psql postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres.db/${POSTGRES_DB} -f /data/init.sql"
           volumeMounts:
             - name: data
               mountPath: /data

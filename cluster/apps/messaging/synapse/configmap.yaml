@@ -6,7 +6,7 @@ metadata:
   namespace: messaging
 data:
   init.sql: |
-    create extension dblink;
+    create extension if not exists dblink;
     DO
     $do$
     BEGIN
@@ -18,7 +18,7 @@ data:
           RAISE NOTICE 'Role "synapse" already exists. Skipping.';
         ELSE
           BEGIN   -- nested block
-            CREATE ROLE my_user LOGIN PASSWORD '${SYNAPSE_DB_PASSWORD}';
+            CREATE ROLE synapse LOGIN PASSWORD '${SYNAPSE_DB_PASSWORD}';
           EXCEPTION
             WHEN duplicate_object THEN
               RAISE NOTICE 'Role "synapse" was just created by a concurrent transaction. Skipping.';
