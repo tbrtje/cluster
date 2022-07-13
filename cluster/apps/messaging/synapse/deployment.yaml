@@ -20,7 +20,7 @@ spec:
           command:
             - /bin/sh
             - -c
-            - "cp /config/* /data/ && chown -R 991:991 /data"
+            - "cp -v /config/* /data/ && chown -Rv 991:991 /data"
               # This is required for Synapse to work properly.
           volumeMounts:
             - name: data
@@ -34,7 +34,7 @@ spec:
           command:
             - /bin/sh
             - -c
-            - "psql postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres.db/${POSTGRES_DB} -f /data/init.sql"
+            - "echo connecting && psql postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres.db/${POSTGRES_DB} -f /data/init.sql && echo done"
           volumeMounts:
             - name: data
               mountPath: /data
