@@ -1,0 +1,14 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: synapse
+  namespace: messaging
+spec:
+  ports:
+    - port: 8008
+      targetPort: 8008
+      protocol: TCP
+      name: synapse
+  selector:
+    app.kubernetes.io/name: synapse
