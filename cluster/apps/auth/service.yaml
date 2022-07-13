@@ -1,0 +1,17 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: lldap
+  namespace: lldap
+spec:
+  selector:
+    app.kubernetes.io/name: lldap
+  ports:
+    - name: lldap
+      port: 3890
+      targetPort: 3890
+    - name: web
+      port: 17170
+      targetPort: 17170
+  type: ClusterIP
