@@ -20,7 +20,7 @@ spec:
           command:
             - /bin/sh
             - -c
-            - "cp /config/* /data/ && chown -R 991:991 /data/*"
+            - "cp /config/* /data/ && chown -R 991:991 /data"
               # This is required for Synapse to work properly.
           volumeMounts:
             - name: data
@@ -40,6 +40,8 @@ spec:
               mountPath: /data
             - name: config
               mountPath: /config
+          securityContext:
+            runAsUser: 991
       containers:
         - name: synapse
           image: matrixdotorg/synapse:v1.62.0
