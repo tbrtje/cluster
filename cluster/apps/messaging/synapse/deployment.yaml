@@ -4,6 +4,8 @@ apiVersion: apps/v1
 metadata:
   name: synapse
   namespace: messaging
+  annotations:
+    reloader.stakater.com/auto: "true"
 spec:
   selector:
     matchLabels:
