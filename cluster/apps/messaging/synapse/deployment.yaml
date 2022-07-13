@@ -32,7 +32,7 @@ spec:
           command:
             - /bin/sh
             - -c
-            - "psql -U ${POSTGRES_USER} -d ${POSTGRES_DB} -p ${POSTGRES_PASSWORD} -h postgres.db -p 5432 -f init.sql"
+            - "psql -U ${POSTGRES_USER} -d ${POSTGRES_DB} -p ${POSTGRES_PASSWORD} -h postgres.db -p 5432 -f /config/init.sql"
       containers:
         - name: synapse
           image: matrixdotorg/synapse:v1.62.0
