@@ -82,7 +82,7 @@ data:
         user: synapse
         password: ${SYNAPSE_DB_PASSWORD}
         database: synapse
-        host: postgres-service
+        host: postgres.db
         cp_min: 5
         cp_max: 10
 
