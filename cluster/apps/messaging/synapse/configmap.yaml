@@ -41,27 +41,41 @@ data:
 
 
   homeserver.yaml: |
-    # Configuration file for Synapse.
-    #
-    # This is a YAML file: see [1] for a quick introduction. Note in particular
-    # that *indentation is important*: all the elements of a list or dictionary
-    # should have the same indentation.
-    #
-    # [1] https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html
-    #
-    # For more information on how to configure Synapse, including a complete accounting of
-    # each option, go to docs/usage/configuration/config_documentation.md or
-    # https://matrix-org.github.io/synapse/latest/usage/configuration/config_documentation.html
+    # vim:ft=yaml
+
+    ## TLS ##
+
+
+    tls_certificate_path: "/data/broetje.online.tls.crt"
+    tls_private_key_path: "/data/broetje.online.tls.key"
+
+
+    ## Server ##
+
     server_name: "broetje.online"
-    pid_file: /data/homeserver.pid
+    pid_file: /homeserver.pid
+    web_client: False
+    soft_file_limit: 0
+    log_config: "/data/log.config"
+
+    ## Ports ##
+
     listeners:
+      # Allow configuring in case we want to reverse proxy 8008
+      # using another process in the same container
       - port: 8008
         tls: false
+        bind_addresses: ['::']
         type: http
-        x_forwarded: true
+        x_forwarded: false
+
         resources:
-          - names: [client, federation]
+          - names: [client]
+            compress: true
+          - names: [federation]
             compress: false
+
+    ## Database ##
     database:
       name: psycopg2
       args:
@@ -71,15 +85,95 @@ data:
         host: postgres-service
         cp_min: 5
         cp_max: 10
-    log_config: "/data/broetje.online.log.config"
-    media_store_path: /data/media_store
-    registration_shared_secret: "kIInorh_pTe-HEZB~&,uX-,-0z90B40aiKJ5wq~94MYOaVx6C~"
-    report_stats: true
-    macaroon_secret_key: "P&SvcRfHzB;MNuhqNX&*lut0ElHD+n.RMxyBenr:PTe1Im58@f"
-    form_secret: "D@E5rdui~im@4O#I+aaX;v2l~Pz684&6ywDml;fifZ:28l@w~7"
+
+
+    ## Performance ##
+
+    event_cache_size: "10K"
+
+    ## Ratelimiting ##
+
+    rc_messages_per_second: 0.2
+    rc_message_burst_count: 10.0
+    federation_rc_window_size: 1000
+    federation_rc_sleep_limit: 10
+    federation_rc_sleep_delay: 500
+    federation_rc_reject_limit: 50
+    federation_rc_concurrent: 3
+
+    ## Files ##
+
+    media_store_path: "/data/media"
+    max_upload_size: "50M"
+    max_image_pixels: "32M"
+    dynamic_thumbnails: false
+
+    # List of thumbnail to precalculate when an image is uploaded.
+    thumbnail_sizes:
+    - width: 32
+      height: 32
+      method: crop
+    - width: 96
+      height: 96
+      method: crop
+    - width: 320
+      height: 240
+      method: scale
+    - width: 640
+      height: 480
+      method: scale
+    - width: 800
+      height: 600
+      method: scale
+
+    url_preview_enabled: False
+    max_spider_size: "10M"
+
+    ## Captcha ##
+    #recaptcha_public_key: "YOUR_PUBLIC_KEY"
+    #recaptcha_private_key: "YOUR_PRIVATE_KEY"
+    #enable_registration_captcha: False
+    #recaptcha_siteverify_api: "https://www.google.com/recaptcha/api/siteverify"
+    ## Turn ##
+    turn_uris: []
+    turn_shared_secret: "YOUR_SHARED_SECRET"
+    turn_user_lifetime: "1h"
+    turn_allow_guests: True
+    ## Registration ##
+    enable_registration: False
+    registration_shared_secret: "${REGISTRATION_SHARED_SECRET}"
+    bcrypt_rounds: 12
+    allow_guest_access: False
+    enable_group_creation: true
+
+
+    ## Metrics ###
+
+
+    enable_metrics: True
+    report_stats: True
+
+
+    ## API Configuration ##
+
+    macaroon_secret_key: "${BROETJE_ONLINE_MACAROON_KEY}"
+    expire_access_token: False
+
+    ## Signing Keys ##
+
     signing_key_path: "/data/broetje.online.signing.key"
+    old_signing_keys: {}
+    key_refresh_interval: "1d" # 1 Day.
+
+    # The trusted servers to download signing keys from.
     trusted_key_servers:
-      - server_name: "matrix.org"
+      - server_name: matrix.org
+        verify_keys:
+          "ed25519:auto": "Noi6WqcDj0QmPxCNQqgezwTlBKrfqehY1u2FyWP9uYw"
+
+    password_config:
+       enabled: true
+
     public_baseurl: https://matrix.broetje.online/
     modules:
       - module: "ldap_auth_provider.LdapAuthProviderModule"
@@ -93,9 +187,41 @@ data:
             mail: "mail"
             name: "cn"
             bind_dn: "uid=admin,ou=people,dc=broetje,dc=online"
-            bind_password: "password"
+            bind_password: "${LLDAP_LDAP_USER_PASS}"
             filter: "(objectClass=person)"
 
     # vim:ft=yaml
   broetje.online.signing.key: |
     ${BROETJE_ONLINE_SIGNING_KEY}
+  broetje.online.registration.key: |
+    ${BROETJE_ONLINE_REGISTRATION_KEY}
+  broetje.online.macaroon.key: |
+    ${BROETJE_ONLINE_MACAROON_KEY}
+  log.config: |
+    version: 1
+
+    formatters:
+      precise:
+        format: '%(asctime)s - %(name)s - %(lineno)d - %(levelname)s - %(request)s - %(message)s'
+
+    handlers:
+
+
+      console:
+        class: logging.StreamHandler
+        formatter: precise
+
+    loggers:
+        synapse.storage.SQL:
+            # beware: increasing this to DEBUG will make synapse log sensitive
+            # information such as access tokens.
+            level: INFO
+
+    root:
+        level: INFO
+
+
+        handlers: [console]
+
+
+    disable_existing_loggers: false
