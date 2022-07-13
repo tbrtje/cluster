@@ -27,6 +27,8 @@ spec:
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
               name: postgres-data
+              # postgres heult sonst
+              subPath: data
           ports:
             - containerPort: 5432
               name: postgres
