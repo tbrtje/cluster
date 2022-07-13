@@ -177,7 +177,7 @@ data:
       - module: "ldap_auth_provider.LdapAuthProviderModule"
         config:
           enabled: true
-          uri: "ldap://lldap.lldap"
+          uri: "ldap://lldap.lldap:3890"
           start_tls: false
           base: "ou=people,dc=broetje,dc=online"
           attributes:
