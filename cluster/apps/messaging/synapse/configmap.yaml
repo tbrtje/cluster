@@ -33,7 +33,7 @@ data:
           RAISE NOTICE 'Database already exists';  -- optional
        ELSE
           PERFORM dblink_exec('dbname=' || current_database()  -- current db
-                            , 'CREATE DATABASE synapse');
+                            , 'CREATE DATABASE synapse OWNER synapse LOCALE C ENCODING UTF8');
        END IF;
     END
     $do$;
