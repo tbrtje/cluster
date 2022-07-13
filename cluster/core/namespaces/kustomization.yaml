@@ -9,3 +9,4 @@ resources:
   - iot.yaml
   - lldap.yaml
   - db.yaml
+  - messaging.yaml
