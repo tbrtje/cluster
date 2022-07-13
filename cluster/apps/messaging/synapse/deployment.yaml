@@ -20,7 +20,8 @@ spec:
           command:
             - /bin/sh
             - -c
-            - "cp /config/* /data/"
+            - "cp /config/* /data/ && chown -R 991:991 /data/*"
+              # This is required for Synapse to work properly.
           volumeMounts:
             - name: data
               mountPath: /data
@@ -62,3 +63,6 @@ spec:
         - name: config
           configMap:
             name: synapse-configmap
+# TODO: Create an ingress for this.
+# TODO: Create a service for this.
+# TODO: Create the well-known for matrix
