@@ -33,12 +33,10 @@ data:
           RAISE NOTICE 'Database already exists';  -- optional
        ELSE
           PERFORM dblink_exec('dbname=' || current_database()  -- current db
-                            , 'CREATE DATABASE synapse OWNER synapse LOCALE C ENCODING UTF8');
+                            , 'CREATE DATABASE synapse OWNER synapse LC_CTYPE ''C.UTF-8'' LC_COLLATE ''C.UTF-8'' ENCODING ''UTF8'' template template0');
        END IF;
     END
-    $do$;
-    GRANT ALL PRIVILEGES ON DATABASE synapse TO synapse;
-
+    $do$
 
   homeserver.yaml: |
     # vim:ft=yaml
