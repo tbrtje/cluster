@@ -2,27 +2,27 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: synapse
+  name: mautrix-whatsapp
   namespace: messaging
   annotations:
     reloader.stakater.com/auto: "true"
 spec:
   selector:
     matchLabels:
-      app.kubernetes.io/name: synapse
+      app.kubernetes.io/name: mautrix-whatsapp
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: synapse
+        app.kubernetes.io/name: mautrix-whatsapp
     spec:
       initContainers:
-        - name: synapse-init
-          image: matrixdotorg/synapse:v1.62.0
+        - name: wa-init
+          image: dock.mau.dev/mautrix/whatsapp:latest
           imagePullPolicy: IfNotPresent
           command:
             - /bin/sh
             - -c
-            - "cp -v /config/* /data/ && chown -Rv 991:991 /data"
+            - "cp -v /config/* /data/ && chown -Rv 1337:1337 /data"
               # This is required for Synapse to work properly.
           volumeMounts:
             - name: data
@@ -43,28 +43,22 @@ spec:
             - name: config
               mountPath: /config
           securityContext:
-            runAsUser: 991
+            runAsUser: 1337
       containers:
         - name: synapse
-          image: matrixdotorg/synapse:v1.62.0
+          image: dock.mau.dev/mautrix/whatsapp:latest
           imagePullPolicy: IfNotPresent
-          env:
-            - name: SYNAPSE_SERVER_NAME
-              value: "broetje.online"
-            - name: SYNAPSE_REPORT_STATS
-              value: "yes"
           volumeMounts:
             - name: data
               mountPath: /data
             - name: config
               mountPath: /config
           ports:
-            - containerPort: 8008
+            - containerPort: 29318
       volumes:
         - name: data
-          persistentVolumeClaim:
-            claimName: synapse-data
+          emptyDir:
+            medium: ""
         - name: config
           configMap:
-            name: synapse-configmap
-# TODO: Create the well-known for matrix
+            name: mautrix-whatsapp-configmap

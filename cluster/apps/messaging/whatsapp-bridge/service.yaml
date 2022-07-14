@@ -1,0 +1,14 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: mautrix-whatsapp
+  namespace: messaging
+spec:
+  ports:
+    - port: 29318
+      targetPort: 29318
+      protocol: TCP
+      name: mautrix-whatsapp
+  selector:
+    app.kubernetes.io/name: mautrix-whatsapp

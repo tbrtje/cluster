@@ -188,6 +188,10 @@ data:
             bind_password: "${LLDAP_LDAP_USER_PASS}"
             filter: "(objectClass=person)"
 
+    # AppServices
+    app_service_config_files:
+      - /data/whatsapp-registration.yaml
+
     # vim:ft=yaml
   broetje.online.signing.key: |
     ${BROETJE_ONLINE_SIGNING_KEY}
@@ -223,3 +227,17 @@ data:
 
 
     disable_existing_loggers: false
+
+  whatsapp-registration.yaml: |
+    id: whatsapp
+    url: http://mautrix-whatsapp:29318
+    as_token: ${MAUTRIX_WA_AS_TOKEN}
+    hs_token: ${MAUTRIX_WA_HS_TOKEN}
+    sender_localpart: ${MAUTRIX_WA_SENDER_LOCALPART}
+    rate_limited: false
+    namespaces:
+      users:
+        - regex: ^@whatsappbot:broetje\.online$
+          exclusive: true
+        - regex: ^@whatsapp_[0-9]+:broetje\.online$
+          exclusive: true
