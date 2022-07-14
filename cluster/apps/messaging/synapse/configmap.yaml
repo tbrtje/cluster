@@ -191,7 +191,8 @@ data:
     # AppServices
     app_service_config_files:
       - /data/whatsapp-registration.yaml
-
+    experimental_features:
+      msc2716_enabled: true
     # vim:ft=yaml
   broetje.online.signing.key: |
     ${BROETJE_ONLINE_SIGNING_KEY}
