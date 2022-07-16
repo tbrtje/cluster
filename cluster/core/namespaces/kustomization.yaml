@@ -10,3 +10,4 @@ resources:
   - lldap.yaml
   - db.yaml
   - messaging.yaml
+  - download.yaml
