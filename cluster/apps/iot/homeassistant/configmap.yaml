@@ -1,0 +1,41 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: homeassistant-configmap
+  namespace: iot
+data:
+  ldap-auth.py: |
+    import os
+    from ldap3 import Server, Connection, ALL, core
+    SERVER = "lldap.lldap"
+    USERDN = "uid={},cn=users,cn=accounts,dc=example,dc=com"
+    TIMEOUT = 3
+    BASEDN = "ou=people,dc=broetje,dc=online"
+    SCOPE = "base"
+    FILTER = "(&(objectClass=person)(memberOf=cn=homeassistant,cn=groups,cn=accounts,dc=example,dc=com))"
+    ATTRS = ""
+
+    if 'username' not in os.environ and 'password' not in os.environ:
+      print("Need username and password environment variables!")
+      exit()
+
+    USERDN = USERDN.format(os.environ['username'])
+    BASEDN = BASEDN.format(os.environ['username'])
+
+    server = Server(SERVER, get_info=ALL)
+    try:
+      conn = Connection(server, USERDN, password=os.environ['password'], auto_bind=True)
+      print("whoami: { }".format(conn.extend.standard.who_am_i()))
+        search = conn.search(BASEDN, FILTER)
+        if search:
+            print("Search success: { }".format(conn.entries))
+            exit(0)
+        else:
+            print("LDAP bind succeded, but search yielded empty result")
+            exit(1)
+    except core.exceptions.LDAPBindError as e:
+      print(e)
+      exit(1)
+  homeassistant.yaml: |
+    # yamllint disable
+  configuration.yaml: |

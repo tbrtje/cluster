@@ -10,3 +10,4 @@ resources:
   - iot
   - auth
   - messaging
+  - downloader

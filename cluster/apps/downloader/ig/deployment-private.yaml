@@ -1,0 +1,59 @@
+---
+kind: CronJob
+apiVersion: batch/v1
+metadata:
+  name: ig-downloader-private-1
+  namespace: download
+spec:
+  schedule: "0 2,14 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: ig-downloader-private-1
+              image: ghcr.io/tbrtje/instaloader:main
+              imagePullPolicy: IfNotPresent
+              volumeMounts:
+                - mountPath: /config
+                  name: config
+                - mountPath: /data
+                  name: data
+          volumes:
+            - name: config
+              configMap:
+                name: ig-downloader-private-1-config
+            - name: data
+              nfs:
+                server: 192.168.178.178
+                path: /mnt/tank/scrape/instagram
+---
+---
+kind: CronJob
+apiVersion: batch/v1
+metadata:
+  name: ig-downloader-private-2
+  namespace: download
+spec:
+  schedule: "0 20 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: ig-downloader-private-2
+              image: ghcr.io/tbrtje/instaloader:main
+              imagePullPolicy: IfNotPresent
+              volumeMounts:
+                - mountPath: /config
+                  name: config
+                - mountPath: /data
+                  name: data
+          volumes:
+            - name: config
+              configMap:
+                name: ig-downloader-private-2-config
+            - name: data
+              nfs:
+                server: 192.168.178.178
+                path: /mnt/tank/scrape/instagram
