@@ -13,7 +13,7 @@ spec:
           restartPolicy: Never
           containers:
             - name: ig-downloader-private-1
-              image: ghcr.io/tbrtje/instaloader:main
+              image: ghcr.io/tbrtje/instaloader:latest
               imagePullPolicy: IfNotPresent
               volumeMounts:
                 - mountPath: /config
@@ -42,7 +42,7 @@ spec:
           restartPolicy: Never
           containers:
             - name: ig-downloader-private-2
-              image: ghcr.io/tbrtje/instaloader:main
+              image: ghcr.io/tbrtje/instaloader:latest
               imagePullPolicy: IfNotPresent
               volumeMounts:
                 - mountPath: /config
