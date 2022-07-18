@@ -25,9 +25,8 @@ spec:
               configMap:
                 name: ig-downloader-private-1-config
             - name: data
-              nfs:
-                server: 192.168.178.178
-                path: /mnt/tank/scrape/instagram
+              persistentVolumeClaim:
+                claimName: instagram-data
 ---
 kind: CronJob
 apiVersion: batch/v1
@@ -55,6 +54,5 @@ spec:
               configMap:
                 name: ig-downloader-private-2-config
             - name: data
-              nfs:
-                server: 192.168.178.178
-                path: /mnt/tank/scrape/instagram
+              persistentVolumeClaim:
+                claimName: instagram-data
