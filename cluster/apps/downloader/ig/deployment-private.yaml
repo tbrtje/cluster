@@ -11,6 +11,8 @@ spec:
       template:
         spec:
           restartPolicy: Never
+          securityContext:
+            fsGroup: 1000
           containers:
             - name: ig-downloader-private-1
               image: ghcr.io/tbrtje/instaloader:latest
@@ -20,6 +22,9 @@ spec:
                   name: config
                 - mountPath: /data
                   name: data
+              securityContext:
+                runAsUser: 1000
+                runAsGroup: 1000
           volumes:
             - name: config
               configMap:
