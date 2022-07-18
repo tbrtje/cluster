@@ -1,0 +1,38 @@
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: instagram-data
+  namespace: download
+  labels:
+    app.kubernetes.io/name: instagram-data
+spec:
+  capacity:
+    storage: 500Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+  storageClassName: nfs-share
+  mountOptions:
+    - nfsvers=3
+  nfs:
+    path: /mnt/tank/scrape/instagram
+    server: 192.168.178.178
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: instagram-data
+  namespace: download
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 500Gi
+  storageClassName: nfs-share
+  volumeMode: Filesystem
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: instagram-data
