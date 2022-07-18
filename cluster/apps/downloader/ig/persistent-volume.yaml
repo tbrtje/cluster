@@ -16,6 +16,7 @@ spec:
   storageClassName: nfs-share
   mountOptions:
     - nfsvers=3
+    - noac
   nfs:
     path: /mnt/tank/scrape/instagram
     server: 192.168.178.178
