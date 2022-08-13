@@ -30,7 +30,7 @@ spec:
             - name: config
               mountPath: /config
         - name: init-db
-          image: postgres:14.4
+          image: postgres:14.5
           imagePullPolicy: IfNotPresent
           # TODO: Figure out why this does not work and why its not connecting.
           command:
