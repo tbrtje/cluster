@@ -17,7 +17,7 @@ spec:
     spec:
       initContainers:
         - name: synapse-init
-          image: matrixdotorg/synapse:v1.64.0
+          image: matrixdotorg/synapse:v1.65.0
           imagePullPolicy: IfNotPresent
           command:
             - /bin/sh
@@ -46,7 +46,7 @@ spec:
             runAsUser: 991
       containers:
         - name: synapse
-          image: matrixdotorg/synapse:v1.64.0
+          image: matrixdotorg/synapse:v1.65.0
           imagePullPolicy: IfNotPresent
           env:
             - name: SYNAPSE_SERVER_NAME
