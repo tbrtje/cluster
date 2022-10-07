@@ -1,0 +1,16 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: homeassistant
+  namespace: iot
+spec:
+  type: LoadBalancer
+  loadBalancerIP: 192.168.178.99
+  ports:
+    - port: 8123
+      targetPort: 8123
+      protocol: TCP
+      name: homeassistant
+  selector:
+    app.kubernetes.io/name: homeassistant
