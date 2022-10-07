@@ -6,7 +6,7 @@ metadata:
   namespace: iot
 spec:
   type: LoadBalancer
-  loadBalancerIP: 192.168.178.99
+  loadBalancerIP: 192.168.178.72
   ports:
     - port: 8123
       targetPort: 8123
