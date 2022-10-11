@@ -23,6 +23,13 @@ spec:
                   number: 8123
             path: /
             pathType: Prefix
+          - backend:
+              service:
+                name: esphome
+                port:
+                  number: 6052
+            path: /esphome
+            pathType: Prefix
   tls:
     - hosts:
         - home.broetje.online

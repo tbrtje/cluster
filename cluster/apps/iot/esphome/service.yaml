@@ -1,0 +1,14 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: esphome
+  namespace: iot
+spec:
+  ports:
+    - port: 6052
+      targetPort: 6052
+      protocol: TCP
+      name: esphome
+  selector:
+    app.kubernetes.io/name: esphome

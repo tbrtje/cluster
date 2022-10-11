@@ -5,3 +5,4 @@ resources:
   #  - vernemq
   - mosquitto
   - homeassistant
+  - esphome
