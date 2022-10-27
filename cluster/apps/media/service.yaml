@@ -1,0 +1,38 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: jellyfin
+  namespace: media
+  annotations:
+    metallb.universe.tf/allow-shared-ip: "jellyfin"
+spec:
+  type: LoadBalancer
+  loadBalancerIP: 192.168.178.75
+  ports:
+    - name: http
+      port: 80
+    - name: https
+      port: 443
+  selector:
+    app.kubernetes.io/name: jellyfin
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: jellyfin-udp
+  namespace: media
+  annotations:
+    - metallb.universe.tf/allow-shared-ip: "jellyfin"
+spec:
+  type: LoadBalancer
+  loadBalancerIP: 192.168.178.75
+  ports:
+    - name: discovery
+      port: 7359
+      protocol: UDP
+    - name: upnp
+      port: 1900
+      protocol: UDP
+  selector:
+    app.kubernetes.io/name: jellyfin
