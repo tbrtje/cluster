@@ -21,6 +21,9 @@ metadata:
   name: media
   namespace: media
 spec:
+  resources:
+    requests:
+      storage: 8Ti
   accessModes:
     - ReadWriteOnce
   volumeName: media
