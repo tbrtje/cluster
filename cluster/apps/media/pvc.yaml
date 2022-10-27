@@ -27,6 +27,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   volumeName: media
+  storageClassName: ""
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -35,7 +36,7 @@ metadata:
   namespace: media
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
       storage: 10Gi
