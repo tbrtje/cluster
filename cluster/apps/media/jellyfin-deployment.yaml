@@ -42,6 +42,8 @@ spec:
               name: upnp
               protocol: UDP
           resources:
+            limits:
+              smarter-devices/dri_card0: "1"
             requests:
               smarter-devices/dri_card0: "1"
           volumeMounts:
