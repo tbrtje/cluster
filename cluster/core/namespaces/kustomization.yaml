@@ -12,3 +12,4 @@ resources:
   - messaging.yaml
   - download.yaml
   - media.yaml
+  - dm.yaml
