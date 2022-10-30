@@ -5,7 +5,9 @@ metadata:
   namespace: dm
 data:
   conf.yaml: |
-    - devicematch: ^dri
+    - devicematch: card0$
+      nummaxdevices: 1
+    - devicematch: renderD128$
       nummaxdevices: 1
 ---
 apiVersion: apps/v1
