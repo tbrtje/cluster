@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - jellyfin-deployment.yaml
   - pvc.yaml
+  - service.yaml
