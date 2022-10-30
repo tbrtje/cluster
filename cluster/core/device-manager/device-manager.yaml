@@ -1,3 +1,26 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: smarter-device-manager
+data:
+  conf.yaml: |
+    - devicematch: ^snd$
+      nummaxdevices: 20
+    - devicematch: ^gpiomem$
+      nummaxdevices: 40
+    - devicematch: ^gpiochip[0-9]*$
+      nummaxdevices: 20
+    - devicematch: ^hci[0-9]*$
+      nummaxdevices: 1
+    - devicematch: ^i2c-[0-9]*$
+      nummaxdevices: 1
+    - devicematch: ^rtc0$
+      nummaxdevices: 20
+    - devicematch: ^video[0-9]*$
+      nummaxdevices: 20
+    - devicematch: ^dri_card[0-9]*$
+      nummaxdevices: 1
+    - devicematch: ^dri_renderD[0-9]*$
 ---
 apiVersion: apps/v1
 kind: DaemonSet
@@ -48,6 +71,8 @@ spec:
               mountPath: /dev
             - name: sys-dir
               mountPath: /sys
+            - name: config
+              mountPath: /root/config
       volumes:
         - name: device-plugin
           hostPath:
@@ -58,4 +83,7 @@ spec:
         - name: sys-dir
           hostPath:
             path: /sys
+        - name: config
+          configMap:
+            name: smarter-device-manager
       terminationGracePeriodSeconds: 30
