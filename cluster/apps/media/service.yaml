@@ -12,8 +12,8 @@ spec:
   ports:
     - name: http
       port: 8096
-    - name: https
-      port: 443
+      targetPort: 8096
+      protocol: TCP
   selector:
     app.kubernetes.io/name: jellyfin
 ---
@@ -31,8 +31,10 @@ spec:
     - name: discovery
       port: 7359
       protocol: UDP
+      targetPort: 7359
     - name: upnp
       port: 1900
       protocol: UDP
+      targetPort: 1900
   selector:
     app.kubernetes.io/name: jellyfin
