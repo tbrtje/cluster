@@ -51,6 +51,8 @@ spec:
               name: data
             - mountPath: /media
               name: media
+            - mountPath: /media2
+              name: media2
           env:
             - name: TZ
               value: Europe/Berlin
@@ -61,3 +63,6 @@ spec:
         - name: media
           persistentVolumeClaim:
             claimName: media
+        - name: media2
+          persistentVolumeClaim:
+            claimName: media2

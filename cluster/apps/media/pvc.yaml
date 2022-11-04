@@ -29,6 +29,35 @@ spec:
   volumeName: media
   storageClassName: ""
 ---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: media2
+  namespace: media
+spec:
+  capacity:
+    storage: 8Ti
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: /mnt/unimportant/Media
+    server: 192.168.178.178
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: media2
+  namespace: media
+spec:
+  resources:
+    requests:
+      storage: 8Ti
+  accessModes:
+    - ReadWriteMany
+  volumeName: media2
+  storageClassName: ""
+---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
