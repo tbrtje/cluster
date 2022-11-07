@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: teleport-auth
-          image: quay.io/gravitational/teleport:10.1.4
+          image: quay.io/gravitational/teleport:11.0.1
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3023
