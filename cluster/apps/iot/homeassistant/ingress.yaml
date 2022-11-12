@@ -23,7 +23,7 @@ spec:
                   number: 8123
             path: /
             pathType: Prefix
-    - host: esphome.broetje.online
+    - host: esphome.home.broetje.online
       http:
         paths:
           - backend:
