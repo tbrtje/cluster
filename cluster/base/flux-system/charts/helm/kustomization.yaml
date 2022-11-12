@@ -29,3 +29,4 @@ resources:
   - democratic-csi.yaml
   - vernemq-charts.yaml
   - teleport-charts.yaml
+  - portainer-charts.yaml

@@ -1,0 +1,60 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: portainer
+  namespace: kube-system
+spec:
+  interval: 1h
+  chart:
+    spec:
+      chart: portainer
+      sourceRef:
+        kind: HelmRepository
+        name: portainer-charts
+        namespace: flux-system
+      version: 1.0.37
+  values:
+    replicaCount: 1
+
+    # If enterpriseEdition is enabled, then use the values below _instead_ of those in .image
+    enterpriseEdition:
+      enabled: false
+
+    image:
+      repository: portainer/portainer-ce
+      tag: 2.16.1
+      pullPolicy: Always
+    serviceAccount:
+      name: portainer-sa-clusteradmin
+    service:
+      # Set the httpNodePort and edgeNodePort only if the type is NodePort
+      # For Ingress, set the type to be ClusterIP and set ingress.enabled to true
+      # For Cloud Providers, set the type to be LoadBalancer
+      type: ClusterIP
+
+    ingress:
+      enabled: true
+      ingressClassName: traefik
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-production
+        external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+        external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
+        external-dns/is-public: "true"
+        traefik.ingress.kubernetes.io/router.entrypoints: websecure
+      hosts:
+        - host:
+          paths:
+            - path: /
+              pathType: Prefix
+      tls:
+        - hosts:
+            - portainer.broetje.online
+          secretName: portainer-tls
+
+    resources: { }
+
+    persistence:
+      enabled: true
+      size: "10Gi"
+      storageClass: freenas-iscsi-csi

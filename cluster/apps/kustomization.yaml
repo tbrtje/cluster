@@ -12,3 +12,4 @@ resources:
   - messaging
   - downloader
   - media
+  - management
