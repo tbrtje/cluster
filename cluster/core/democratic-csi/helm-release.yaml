@@ -121,10 +121,10 @@ spec:
           # standard volume naming overhead is 46 chars
           # datasetParentName should therefore be 17 chars or less when using TrueNAS 12 or below (SCALE and 13+ do not have the same limits)
           # for work-arounds see https://github.com/democratic-csi/democratic-csi/issues/54
-          datasetParentName: SSD/k3s/vols
+          datasetParentName: SATASSD/SSD/k3s/vols
           # do NOT make datasetParentName and detachedSnapshotsDatasetParentName overlap
           # they may be siblings, but neither should be nested in the other
-          detachedSnapshotsDatasetParentName: SSD/k3s/snaps
+          detachedSnapshotsDatasetParentName: SATASSD/SSD/k3s/snaps
           # "" (inherit), lz4, gzip-9, etc
           zvolCompression:
           # "" (inherit), on, off, verify
