@@ -21,10 +21,12 @@ spec:
   upgrade:
     remediation:
       retries: 3
-  values:
-    configInline:
-      address-pools:
-        - name: default
-          protocol: layer2
-          addresses:
-            - "${METALLB_LB_RANGE}"
+---
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: privateipspace
+  namespace: metallb-system
+spec:
+  addresses:
+    - 10.0.0.50-10.0.0.90
