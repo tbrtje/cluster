@@ -19,7 +19,7 @@ spec:
     - noac
   nfs:
     path: /mnt/tank/scrape/instagram
-    server: 192.168.178.178
+    server: 10.0.0.51
 ---
 kind: PersistentVolumeClaim
 apiVersion: v1
