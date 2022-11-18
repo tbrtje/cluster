@@ -14,10 +14,10 @@ spec:
   ingressClassName: "traefik"
   tls:
     - hosts:
-        - "traefik.${SECRET_DOMAIN}"
+        - "traefik.broetje.online"
       secretName: "traefik-dashboard-tls"
   rules:
-    - host: "traefik.${SECRET_DOMAIN}"
+    - host: "traefik.broetje.online"
       http:
         paths:
           - path: /
