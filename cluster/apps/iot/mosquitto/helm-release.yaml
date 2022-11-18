@@ -28,7 +28,7 @@ spec:
     service:
       main:
         type: LoadBalancer
-        loadBalancerIP: 10.0.0.55
+        loadBalancerIP: 10.0.0.71
         ports:
           http:
             enabled: false
