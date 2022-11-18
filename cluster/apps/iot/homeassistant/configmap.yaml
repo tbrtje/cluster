@@ -14,6 +14,7 @@ data:
     SCOPE = "base"
     FILTER = "(&(objectClass=person)(memberOf=cn=homeassistant,cn=groups,cn=accounts,dc=example,dc=com))"
     ATTRS = ""
+    PASSWORD = "${LLDAP_LDAP_USER_PASS}"
 
     if 'username' not in os.environ and 'password' not in os.environ:
       print("Need username and password environment variables!")
@@ -39,3 +40,35 @@ data:
   homeassistant.yaml: |
     # yamllint disable
   configuration.yaml: |
+  init.sql: |
+    create extension if not exists dblink;
+    DO
+    $do$
+    BEGIN
+      IF
+        EXISTS (
+          SELECT FROM pg_catalog.pg_roles
+          WHERE  rolname = 'homeassistant') THEN
+
+          RAISE NOTICE 'Role "homeassistant" already exists. Skipping.';
+        ELSE
+          BEGIN   -- nested block
+            CREATE ROLE homeassistant LOGIN PASSWORD 'APaik8ie';
+          EXCEPTION
+            WHEN duplicate_object THEN
+              RAISE NOTICE 'Role "homeassistant" was just created by a concurrent transaction. Skipping.';
+          END;
+      END IF;
+    END
+    $do$;
+    DO
+    $do$
+    BEGIN
+       IF EXISTS (SELECT FROM pg_database WHERE datname = 'homeassistant') THEN
+          RAISE NOTICE 'Database already exists';  -- optional
+       ELSE
+          PERFORM dblink_exec('dbname=' || current_database()  -- current db
+                            , 'CREATE DATABASE homeassistant OWNER homeassistant LC_CTYPE ''C.UTF-8'' LC_COLLATE ''C.UTF-8'' ENCODING ''UTF8'' template template0');
+       END IF;
+    END
+    $do$
