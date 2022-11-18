@@ -12,3 +12,4 @@ resources:
   - portainer-charts.yaml
   - traefik-charts.yaml
   - vernemq-charts.yaml
+  - dysnix-charts.yaml
