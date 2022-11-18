@@ -1,0 +1,14 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - bitnami-charts.yaml
+  - democratic-csi.yaml
+  - external-dns-charts.yaml
+  - hajimari-charts.yaml
+  - k8s-gateway-charts.yaml
+  - metallb-charts.yaml
+  - minecraft-server-charts.yaml
+  - portainer-charts.yaml
+  - traefik-charts.yaml
+  - vernemq-charts.yaml
