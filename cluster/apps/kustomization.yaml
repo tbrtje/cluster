@@ -7,9 +7,9 @@ resources:
   - networking
   - database
   # - system-upgrade
-  - iot
-  - auth
-  - messaging
-  - downloader
-  - media
-  - management
+#  - iot
+#  - auth
+#  - messaging
+#  - downloader
+#  - media
+#  - management
