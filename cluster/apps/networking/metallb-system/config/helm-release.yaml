@@ -30,7 +30,7 @@ spec:
         kind: BGPPeer
         metadata:
           name: opnsense
-          namespace: metallb-system
+          namespace: networking
         spec:
           myASN: 64513
           peerASN: 64512
@@ -39,7 +39,7 @@ spec:
         kind: BGPAdvertisement
         metadata:
           name: opnsense
-          namespace: metallb-system
+          namespace: networking
         spec:
           ipAddressPools:
             - services
