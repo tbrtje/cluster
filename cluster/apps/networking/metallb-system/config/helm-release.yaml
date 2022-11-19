@@ -26,23 +26,6 @@ spec:
       namespace: networking
   values:
     resources:
-      - apiVersion: metallb.io/v1beta2
-        kind: BGPPeer
-        metadata:
-          name: opnsense
-          namespace: networking
-        spec:
-          myASN: 64513
-          peerASN: 64512
-          peerAddress: 10.0.0.1
-      - apiVersion: metallb.io/v1beta1
-        kind: BGPAdvertisement
-        metadata:
-          name: opnsense
-          namespace: networking
-        spec:
-          ipAddressPools:
-            - services
       - apiVersion: metallb.io/v1beta1
         kind: IPAddressPool
         metadata:
