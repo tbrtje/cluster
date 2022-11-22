@@ -10,7 +10,7 @@ resources:
   - networking
   - database
   # - system-upgrade
-#  - iot
+  - iot
 #  - auth
 #  - messaging
 #  - downloader

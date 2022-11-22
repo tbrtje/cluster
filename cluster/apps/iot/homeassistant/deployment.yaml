@@ -1,34 +1,73 @@
 ---
-kind: Deployment
-apiVersion: apps/v1
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
 metadata:
   name: homeassistant
-  namespace: iot
+  namespace: homeassistant
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app.kubernetes.io/name: homeassistant
-  template:
-    metadata:
-      labels:
-        app.kubernetes.io/name: homeassistant
+  interval: 15m
+  chart:
     spec:
-      containers:
-        - name: homeassistant
-          image: homeassistant/home-assistant:2022.11
-          imagePullPolicy: IfNotPresent
-          ports:
-            - containerPort: 8123
-              name: http
-              protocol: TCP
-          volumeMounts:
-            - mountPath: /config
-              name: data
-          env:
-            - name: TZ
-              value: Europe/Berlin
-      volumes:
-        - name: data
-          persistentVolumeClaim:
-            claimName: homeassistant-data
+      chart: raw
+      version: v0.3.1
+      sourceRef:
+        kind: HelmRepository
+        name: dysnix
+        namespace: flux-system
+  install:
+    createNamespace: true
+    remediation:
+      retries: 5
+  upgrade:
+    remediation:
+      retries: 5
+  dependsOn:
+    - name: democratic-csi
+      namespace: democratic-csi
+  values:
+    resources:
+      - kind: PersistentVolumeClaim
+        apiVersion: v1
+        metadata:
+          name: homeassistant-data
+          namespace: iot
+        spec:
+          accessModes:
+            - ReadWriteOnce
+          resources:
+            requests:
+              storage: 5Gi
+          storageClassName: freenas-iscsi-csi
+      - kind: Deployment
+        apiVersion: apps/v1
+        metadata:
+          name: homeassistant
+          namespace: iot
+        spec:
+          replicas: 1
+          selector:
+            matchLabels:
+              app.kubernetes.io/name: homeassistant
+          template:
+            metadata:
+              labels:
+                app.kubernetes.io/name: homeassistant
+            spec:
+              containers:
+                - name: homeassistant
+                  image: homeassistant/home-assistant:2022.11
+                  imagePullPolicy: IfNotPresent
+                  ports:
+                    - containerPort: 8123
+                      name: http
+                      protocol: TCP
+                  volumeMounts:
+                    - mountPath: /config
+                      name: data
+                  env:
+                    - name: TZ
+                      value: Europe/Berlin
+              volumes:
+                - name: data
+                  persistentVolumeClaim:
+                    claimName: homeassistant-data
