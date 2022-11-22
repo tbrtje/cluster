@@ -2,8 +2,8 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: cert-manager-issuers
-  namespace: networking
+  name: democratic-csi
+  namespace: democratic-csi
 spec:
   interval: 15m
   chart:
