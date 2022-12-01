@@ -11,8 +11,9 @@ resources:
   - database
   # - system-upgrade
   - iot
-#  - auth
-#  - messaging
-#  - downloader
-#  - media
+  #  - auth
+  #  - messaging
+  #  - downloader
+  #
+  - media
 #  - management
