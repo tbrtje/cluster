@@ -29,7 +29,7 @@ spec:
       kind: Deployment
       metadata:
         name: bytebase
-        namespace: default
+        namespace: db
       spec:
         selector:
           matchLabels:
@@ -73,7 +73,7 @@ spec:
       kind: Service
       metadata:
         name: bytebase-entrypoint
-        namespace: default
+        namespace: db
       spec:
         type: LoadBalancer
         selector:
