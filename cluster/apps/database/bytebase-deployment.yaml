@@ -53,7 +53,7 @@ spec:
                       "--port",
                       "8080",
                       "--pg",
-                      "postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres.db:5432/buddybase",
+                      "postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres.db:5432/bytebase",
                     ]
                   ports:
                     - containerPort: 8080
