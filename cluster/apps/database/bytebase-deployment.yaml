@@ -25,60 +25,61 @@ spec:
     - name: democratic-csi
       namespace: democratic-csi
   values:
-    - apiVersion: apps/v1
-      kind: Deployment
-      metadata:
-        name: bytebase
-        namespace: db
-      spec:
-        selector:
-          matchLabels:
-            app: bytebase
-        template:
-          metadata:
-            labels:
+    resources:
+      - apiVersion: apps/v1
+        kind: Deployment
+        metadata:
+          name: bytebase
+          namespace: db
+        spec:
+          selector:
+            matchLabels:
               app: bytebase
-          spec:
-            containers:
-              - name: bytebase
-                image: bytebase/bytebase:1.9.1
-                imagePullPolicy: Always
-                args:
-                  [
-                    "--data",
-                    "/var/opt/bytebase",
-                    "--external-url",
-                    "https://bytebase.broetje.online",
-                    "--port",
-                    "8080",
-                    "--pg",
-                    "postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres.db:5432/buddybase",
-                  ]
-                ports:
-                  - containerPort: 8080
-                volumeMounts:
-                  - name: data
-                    mountPath: /var/opt/bytebase
-                livenessProbe:
-                  httpGet:
-                    path: /healthz
-                    port: 8080
-                  initialDelaySeconds: 300
-                  periodSeconds: 300
-                  timeoutSeconds: 60
-            volumes:
-              - name: data
-                emptyDir: { }
-    - apiVersion: v1
-      kind: Service
-      metadata:
-        name: bytebase-entrypoint
-        namespace: db
-      spec:
-        type: LoadBalancer
-        selector:
-          app: bytebase
-        ports:
-          - protocol: TCP
-            port: 8080
-            targetPort: 8080
+          template:
+            metadata:
+              labels:
+                app: bytebase
+            spec:
+              containers:
+                - name: bytebase
+                  image: bytebase/bytebase:1.9.1
+                  imagePullPolicy: Always
+                  args:
+                    [
+                      "--data",
+                      "/var/opt/bytebase",
+                      "--external-url",
+                      "https://bytebase.broetje.online",
+                      "--port",
+                      "8080",
+                      "--pg",
+                      "postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres.db:5432/buddybase",
+                    ]
+                  ports:
+                    - containerPort: 8080
+                  volumeMounts:
+                    - name: data
+                      mountPath: /var/opt/bytebase
+                  livenessProbe:
+                    httpGet:
+                      path: /healthz
+                      port: 8080
+                    initialDelaySeconds: 300
+                    periodSeconds: 300
+                    timeoutSeconds: 60
+              volumes:
+                - name: data
+                  emptyDir: { }
+      - apiVersion: v1
+        kind: Service
+        metadata:
+          name: bytebase-entrypoint
+          namespace: db
+        spec:
+          type: LoadBalancer
+          selector:
+            app: bytebase
+          ports:
+            - protocol: TCP
+              port: 8080
+              targetPort: 8080
