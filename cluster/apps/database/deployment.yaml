@@ -2,7 +2,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: postgres
+  name: bytebase
   namespace: db
 spec:
   interval: 15m
@@ -22,8 +22,8 @@ spec:
     remediation:
       retries: 5
   dependsOn:
-    - name: democratic-csi
-      namespace: democratic-csi
+    - name: postgres
+      namespace: db
   values:
     resources:
       - kind: Deployment
