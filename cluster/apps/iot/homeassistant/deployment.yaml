@@ -55,7 +55,7 @@ spec:
             spec:
               containers:
                 - name: homeassistant
-                  image: homeassistant/home-assistant:2022.11
+                  image: homeassistant/home-assistant:2022.12
                   imagePullPolicy: IfNotPresent
                   ports:
                     - containerPort: 8123
