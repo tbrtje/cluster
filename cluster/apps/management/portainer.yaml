@@ -13,7 +13,7 @@ spec:
         kind: HelmRepository
         name: portainer-charts
         namespace: flux-system
-      version: 1.0.37
+      version: 1.0.49
   values:
     replicaCount: 1
 
