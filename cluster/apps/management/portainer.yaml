@@ -23,7 +23,7 @@ spec:
 
     image:
       repository: portainer/portainer-ce
-      tag: 2.16.1
+      tag: 2.20.0
       pullPolicy: Always
     serviceAccount:
       name: portainer-sa-clusteradmin
